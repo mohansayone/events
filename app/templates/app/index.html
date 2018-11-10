@@ -1,0 +1,14 @@
+{% extends 'app/base.html'%}
+
+
+{%block content%}
+<div class ='container'>
+  <div class ='row'>
+    {%for entry in entries%}
+     {%include 'app/calender_entry.html'%}
+     {%endfor%}
+          </div>
+            </div>
+
+  </div>
+{%endblock%}
