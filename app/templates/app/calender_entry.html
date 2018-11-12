@@ -8,3 +8,4 @@
       </p>
 
       <button onclick = "window.location='{% url 'details'  pk=entry.id %}'" class="btn btn-primary">view</button>
+      <button data-id = "{{entry.id}}" onclick = "deleteCalenderEntry(this)" class="btn btn-danger">Delete</button>

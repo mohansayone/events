@@ -3,10 +3,10 @@
 {% block content %}
 <div class="container jumbotron">
   <button onclick="window.location='{% url 'index' %}'" class="btn btn-default">Go Back</button>
+  <br />
+  <h2>{{ entry.name }}</h2>
   <hr />
-  <h1>{{ entry.name }}</h1>
-  <hr />
-  <h5>{{ entry.date }}</h5>
+  <h4>{{ entry.date|date:"Y M D" }}</h4>
   <p>{{ entry.description }}</p>
 </div>
 {% endblock %}

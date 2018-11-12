@@ -26,6 +26,9 @@ SECRET_KEY = '9c2(pn#fl+j5ls8a9*6wxb-!!e=gzw$!p8&5qjx2d_h+84t1u@'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOGIN_URL='/login'
+
+LOGIN_REDIRECT_URL = '/calender'
 
 
 # Application definition
@@ -115,17 +118,16 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
 
- import django_heroku
+import dj_database_url
+db_from_env=dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
- django_heroku.settings(locals())
 
- STATIC_URL='/static/'
+STATIC_URL = '/static/'
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR,'static'),
+]
 
- STATICFILES_DIRS=[
-  os.path.join(BASE_DIR,'static'),
- ]
-
- STATIC_ROOT=os.path.(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipMainfestStaticFilesStorage'

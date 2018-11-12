@@ -1,13 +1,13 @@
-{% extends 'myapp/base.html' %}
+{% extends 'app/base.html' %}
 {% block content %}
 <div class="container form-group">
   <br />
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-8">
       <h1>Add A New Entry!</h1>
     </div>
     <div class="col-lg-6">
-      <button onclick="window.location='{% url 'calendar' %}'"type="button" class="btn btn-success">Go Back</button>
+      <button onclick="window.location='{% url 'calender' %}'"type="button" class="btn btn-success">Go Back</button>
     </div>
   </div>
   <form method="POST">
